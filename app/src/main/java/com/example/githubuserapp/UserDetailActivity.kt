@@ -35,7 +35,7 @@ class UserDetailActivity: AppCompatActivity() {
     val compositeDisposable = CompositeDisposable()
 
     private val apiService by lazy {
-        ApiService.create(this)
+        ApiService.create()
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

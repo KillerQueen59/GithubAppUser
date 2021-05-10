@@ -1,8 +1,6 @@
 package com.example.githubuserapp.connection
 
 
-import android.content.Context
-import com.example.githubuserapp.BuildConfig
 import com.example.githubuserapp.model.User
 import com.example.githubuserapp.model.UserList
 import io.reactivex.Observable
@@ -23,13 +21,12 @@ interface ApiService {
 
     @GET
     fun detailUser(@Url url: String): Observable<User>
-
-
+    
     @GET
     fun followingUser(@Url url: String): Observable<ArrayList<User>>
 
     companion object{
-        fun create(context: Context): ApiService{
+        fun create(): ApiService{
             val interceptor =  HttpLoggingInterceptor()
             interceptor.level = HttpLoggingInterceptor.Level.BODY
 
@@ -45,7 +42,7 @@ interface ApiService {
             val retrofit = Retrofit.Builder()
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create())
-                .baseUrl(BuildConfig.BASE_URL)
+                .baseUrl("https://api.github.com")
                 .client(client)
                 .build()
 
@@ -54,7 +51,7 @@ interface ApiService {
 
         private fun headersInterceptor(): Interceptor = Interceptor { chain ->
             chain.proceed(chain.request().newBuilder()
-                .addHeader("Authorization", "token fc3345c96e2b5b953e9e07f1703774311c8f6858")
+                .addHeader("Authorization", "token b3ef1959fc84420e964956340ba9a6754ee79efa")
                 .build())
         }
     }

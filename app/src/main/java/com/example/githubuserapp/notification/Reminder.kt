@@ -89,8 +89,9 @@ class Reminder : BroadcastReceiver() {
 
         val calendar: Calendar = Calendar.getInstance().apply {
             timeInMillis = System.currentTimeMillis()
-            set(Calendar.HOUR_OF_DAY,10)
-            set(Calendar.MINUTE, 40)
+            set(Calendar.HOUR_OF_DAY,9)
+            set(Calendar.MINUTE, 0)
+            set(Calendar.SECOND, 0)
         }
 
         val pendingIntent = PendingIntent.getBroadcast(context, ID_REPEATING, intent, 0)

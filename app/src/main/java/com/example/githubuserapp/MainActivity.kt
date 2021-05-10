@@ -1,21 +1,15 @@
 package com.example.githubuserapp
 
-import android.content.Context
-import android.content.Intent
 import android.os.Build
 import android.os.Bundle
-import android.provider.Settings.ACTION_LOCALE_SETTINGS
-import android.transition.Fade
-import android.transition.TransitionManager
-import android.util.Log
 import android.view.*
 import android.widget.LinearLayout
 import android.widget.PopupWindow
 import android.widget.SearchView
 import androidx.activity.viewModels
-import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.githubuserapp.adapter.UserAdapter
 import com.example.githubuserapp.connection.ApiService
 import com.example.githubuserapp.databinding.ActivityMainBinding
 import com.example.githubuserapp.databinding.DialogSwitchSettingBinding
@@ -33,13 +27,12 @@ class MainActivity : AppCompatActivity() {
     private lateinit var bindingModal: DialogSwitchSettingBinding
     private val model: UserViewModel by viewModels()
     private var found = false
-    private lateinit var reminder: Reminder
     lateinit var popupWindow: PopupWindow
     lateinit var viewModal: View
 
 
     val apiService by lazy {
-        ApiService.create(this)
+        ApiService.create()
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -50,9 +43,9 @@ class MainActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
         showData()
+        onClick()
         showProgress(false)
         showOpening(true)
-        reminder = Reminder()
 
         viewModal = bindingModal.root
         popupWindow = PopupWindow(
@@ -60,39 +53,15 @@ class MainActivity : AppCompatActivity() {
                 LinearLayout.LayoutParams.MATCH_PARENT,
                 LinearLayout.LayoutParams.MATCH_PARENT
         )
+
     }
 
-    @RequiresApi(Build.VERSION_CODES.KITKAT)
-    private fun openSetting(){
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            popupWindow.elevation = 10.0F
+    private fun onClick() {
+        binding.btnFavouriteFloat.setOnClickListener {
+            startActivity<FavouriteActivity>()
         }
-
-        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
-            val fadeIn = Fade()
-            popupWindow.enterTransition = fadeIn
-            val fadeOut= Fade()
-            popupWindow.exitTransition = fadeOut
-        }
-
-        bindingModal.btnSave.setOnClickListener {
-            if (bindingModal.switchButton.isChecked){
-                reminder.setRepeatingAlarm(this,"Kembalilah Cek Aplikasimu ")
-                toast("Aktifkan Alarm")
-            } else {
-                reminder.cancelAlarm(this)
-                toast("Mematikan Alarm")
-            }
-            popupWindow.dismiss()
-        }
-        TransitionManager.beginDelayedTransition(bindingModal.root)
-        popupWindow.showAtLocation(
-                bindingModal.root,
-                Gravity.CENTER,
-                0,
-                0
-        )
     }
+
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_main, menu)
@@ -134,17 +103,9 @@ class MainActivity : AppCompatActivity() {
         return super.onCreateOptionsMenu(menu)
     }
 
-    @RequiresApi(Build.VERSION_CODES.KITKAT)
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if (item.itemId == R.id.localization){
-            val mIntent = Intent(ACTION_LOCALE_SETTINGS)
-            startActivity(mIntent)
-        }
-        if (item.itemId == R.id.favourite){
-            startActivity<FavouriteActivity>()
-        }
-        if (item.itemId == R.id.alarm){
-            openSetting()
+        if (item.itemId == R.id.setting){
+            startActivity<SettingActivity>()
         }
         return super.onOptionsItemSelected(item)
     }
@@ -152,7 +113,7 @@ class MainActivity : AppCompatActivity() {
     private fun showData(){
         binding.rvUser.setHasFixedSize(true)
         binding.rvUser.layoutManager = LinearLayoutManager(this)
-        adapter = UserAdapter(list,this)
+        adapter = UserAdapter(list)
         binding.rvUser.adapter = adapter
         if (found) binding.rvUser.visibility = View.VISIBLE else binding.rvUser.visibility = View.GONE
     }
@@ -178,6 +139,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onPause() {
         super.onPause()
+        model.onPaused()
     }
 
 }

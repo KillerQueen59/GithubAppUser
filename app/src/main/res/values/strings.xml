@@ -10,13 +10,27 @@
     <string name="company">Company :</string>
     <string name="total_repository">Total Repository :</string>
     <string name="followers">Followers</string>
-    <string name="following" >Following</string>
+    <string name="following">Following</string>
     <string name="your_favourite_user">Your Favourite User</string>
     <string name="your_favourite_user_is_empty">Your Favourite User is Empty</string>
     <string name="off">Off</string>
     <string name="on">On</string>
     <string name="simpan_perubahan">Simpan Perubahan</string>
     <string name="pengaturan_setting_alarm">Pengaturan Setting Alarm</string>
+    <string name="localization">Localization</string>
+    <string name="alarm_setting">Alarm Setting</string>
+    <string name="favourite">Favourite</string>
+    <string name="about">About</string>
+    <string name="appwidget_text">EXAMPLE</string>
+    <string name="add_widget">Add widget</string>
+    <string name="empty_text" />
+    <string name="user_favourite">User Favourite</string>
+    <string name="setting">Setting</string>
+    <string name="pengaturan_localisasi">Pengaturan Lokalisasi</string>
+    <string name="Indonesia">Bahasa</string>
+    <string name="English" >English</string>
+    <string name="change_languange">Change Languange</string>
+    <string name="alarm_akan_dinyalakan_pada_pukul_9_00_untuk_menyarankan_kamu_kembali_ke_aplikasi_ini">Alarm akan dinyalakan pada pukul 9.00 untuk menyarankan kamu kembali ke aplikasi ini</string>
 
 
 </resources>

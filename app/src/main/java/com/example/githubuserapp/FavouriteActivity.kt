@@ -1,7 +1,6 @@
 package com.example.githubuserapp
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -9,7 +8,6 @@ import com.example.githubuserapp.adapter.FavouriteAdapter
 import com.example.githubuserapp.database.Favourite
 import com.example.githubuserapp.database.FavouriteDatabase
 import com.example.githubuserapp.databinding.ActivityFavouriteBinding
-import com.example.githubuserapp.model.User
 import java.util.ArrayList
 
 class FavouriteActivity: AppCompatActivity() {
@@ -35,7 +33,7 @@ class FavouriteActivity: AppCompatActivity() {
     private fun showData(){
         binding.rvFavourite.setHasFixedSize(true)
         binding.rvFavourite.layoutManager = LinearLayoutManager(this)
-        adapter = FavouriteAdapter(favourite,this)
+        adapter = FavouriteAdapter(favourite)
         binding.rvFavourite.adapter = adapter
     }
 

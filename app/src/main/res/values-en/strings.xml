@@ -18,4 +18,16 @@
     <string name="on">On</string>
     <string name="simpan_perubahan">Save Changes</string>
     <string name="pengaturan_setting_alarm">Alarm Settings</string>
+    <string name="localization">Localization</string>
+    <string name="alarm_setting">Alarm Setting</string>
+    <string name="favourite">Favourite</string>
+    <string name="about">About</string>
+    <string name="user_favourite">User Favourite</string>
+    <string name="setting">Setting</string>
+    <string name="pengaturan_localisasi">Localization Setting</string>
+    <string name="Indonesia">Bahasa</string>
+    <string name="English" >English</string>
+    <string name="change_languange">Change Languange</string>
+    <string name="alarm_akan_dinyalakan_pada_pukul_9_00_untuk_menyarankan_kamu_kembali_ke_aplikasi_ini">An alarm will be turned on at 9:00 a.m. to suggest you return to the application</string>
+
 </resources>

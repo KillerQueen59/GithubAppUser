@@ -9,6 +9,7 @@ class SessionManagement( context: Context) {
     companion object{
         private val PREF_NAME = "AndroidHivePref"
         val USER_NAME = "username"
+        val NOTIF_ON = "notifon"
     }
 
     var pref: SharedPreferences
@@ -24,6 +25,16 @@ class SessionManagement( context: Context) {
         get() {
             return pref.getString(USER_NAME,"").toString()
         }
+
+    val notif: Boolean
+    get() {
+        return pref.getBoolean(NOTIF_ON,false)
+    }
+
+    fun setNotif(notif: Boolean){
+        editor.putBoolean(NOTIF_ON,notif)
+        editor.commit()
+    }
 
     fun sendUser(username: String){
         editor.putString(USER_NAME,username)

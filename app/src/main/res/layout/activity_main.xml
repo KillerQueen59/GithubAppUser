@@ -9,6 +9,22 @@
     tools:context=".MainActivity"
     >
 
+
+    <ImageView
+        android:id="@+id/btn_favourite_float"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/circle_white"
+        android:padding="10dp"
+        android:src="@drawable/ic_baseline_favorite_24_white"
+        android:tint="@color/blackgithub"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.944"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.961" />
+
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="75dp"
@@ -71,10 +87,10 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:layout_constraintVertical_bias="0.384" />
+        app:layout_constraintVertical_bias="0.366" />
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="wrap_content"

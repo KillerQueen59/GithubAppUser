@@ -23,7 +23,7 @@ class FragmentFollowing: Fragment() {
     private lateinit var adapter: FollowAdapter
     private var found = false
     private val apiService by lazy {
-        ApiService.create(requireContext())
+        ApiService.create()
     }
 
     override fun onCreateView(
@@ -60,6 +60,9 @@ class FragmentFollowing: Fragment() {
                 found = true
                 showData()
                 showProgress(false)
+            } else {
+                showProgress(false)
+                binding.listEmpty.visibility = View.VISIBLE
             }
         })
     }

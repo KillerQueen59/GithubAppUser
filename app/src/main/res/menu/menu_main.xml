@@ -1,23 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <item
-        android:id="@+id/localization"
-        android:title="Localization"/>
-    <item
-        android:id="@+id/alarm"
-        android:title="Alarm Setting"/>
+
 
     <item
         android:id="@+id/appSearchBar"
         android:icon="@drawable/ic_search"
-        android:title="Search"
+        android:title="@string/search"
         app:actionViewClass="android.widget.SearchView"
         app:showAsAction="ifRoom|withText"/>
 
     <item
-        android:id="@+id/favourite"
-        android:icon="@drawable/ic_baseline_favorite_24_white"
-        android:title="Favourite"
-        app:showAsAction="ifRoom|withText"/>
+        android:id="@+id/setting"
+        android:title="@string/setting"
+        android:icon="@drawable/setting"
+        app:showAsAction="always"/>
 </menu>

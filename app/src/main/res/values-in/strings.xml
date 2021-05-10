@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Aplikasi Pengguna Github</string>
-    <string name="welcome">Selamat Datang di aplikai pengguna Github</string>
+    <string name="welcome">Selamat Datang di aplikasi pengguna Github</string>
     <string name="search_hint">Cari pengguna</string>
     <string name="list_users_empty">Pengguna Kosong</string>
     <string name="search">Cari</string>
@@ -18,4 +18,16 @@
     <string name="on">Nyalakan</string>
     <string name="simpan_perubahan">Simpan Perubahan</string>
     <string name="pengaturan_setting_alarm">Pengaturan Setting Alarm</string>
+    <string name="localization">Lokalisasi</string>
+    <string name="alarm_setting">Pengaturan Alarm</string>
+    <string name="favourite">Favorit</string>
+    <string name="about">Tentang</string>
+    <string name="user_favourite">Pengguna Favorit</string>
+    <string name="setting">Pengaturan</string>
+    <string name="pengaturan_localisasi">Pengaturan Lokalisasi</string>
+    <string name="Indonesia">Bahasa</string>
+    <string name="English" >English</string>
+    <string name="change_languange">Mengganti Bahasa</string>
+    <string name="alarm_akan_dinyalakan_pada_pukul_9_00_untuk_menyarankan_kamu_kembali_ke_aplikasi_ini">Alarm akan dinyalakan pada pukul 9.00 untuk menyarankan kamu kembali ke aplikasi ini</string>
+
 </resources>

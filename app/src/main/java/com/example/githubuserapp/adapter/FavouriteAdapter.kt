@@ -1,6 +1,5 @@
 package com.example.githubuserapp.adapter
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -9,13 +8,10 @@ import com.bumptech.glide.request.RequestOptions
 import com.example.githubuserapp.UserDetailActivity
 import com.example.githubuserapp.database.Favourite
 import com.example.githubuserapp.databinding.ItemUserBinding
-import com.example.githubuserapp.model.User
 import org.jetbrains.anko.startActivity
 
-class FavouriteAdapter(private val users: List<Favourite>, private val context: Context)
+class FavouriteAdapter(private val users: List<Favourite>)
     : RecyclerView.Adapter<FavouriteViewHolder>() {
-
-
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FavouriteViewHolder = FavouriteViewHolder(
         ItemUserBinding.inflate(LayoutInflater.from(parent.context), parent, false))
